@@ -42,7 +42,7 @@ fun CheckoutApp(
                     val destination = when(it) {
                         is Category.HomeScreen -> Screens.HomeScreen.route
                         is Category.TransactionsScreen -> Screens.TransactionsScreen.route
-                        is Category.ReprintScreen -> Screens.PrintScreen.route
+//                        is Category.ReprintScreen -> Screens.PrintScreen.route
                         is Category.LogoutScreen -> Screens.Logout.route
                         else -> Screens.HomeScreen.route
                     }
@@ -79,10 +79,7 @@ fun CheckoutApp(
                     selectedCategory = Category.TransactionsScreen
                     TransactionsScreen()
                 }
-                composable(Screens.PrintScreen.route) {
-                    selectedCategory = Category.ReprintScreen
-                    PrintScreen()
-                }
+
                 composable(Screens.Logout.route){
                     selectedCategory = Category.LogoutScreen
                     logout.invoke()
